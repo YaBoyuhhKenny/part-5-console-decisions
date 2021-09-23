@@ -12,42 +12,49 @@ namespace part_5_console_decisions
         {
             //stages
 
-            //int age;
-            //string result;
+            int age;
+            string result;
 
-            //Console.WriteLine("Please enter your age in numbers");
-            //age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter your age in numbers");
+            age = Convert.ToInt32(Console.ReadLine());
 
-            //if (age > 0 && age <= 5)
-            //{
-            //    result = "toddler";
-            //    Console.WriteLine($"you are a " + result);
-            //}
+            if (age <= 0)
+            {
+                Console.WriteLine("how are you even doing this if your age is negative?");
+            }
 
-            //else if (age > 5 && age <= 10)
-            //{
-            //    result = "child";
-            //    Console.WriteLine($"you are a " + result);
-            //}
+            else if (age > 0 && age <= 5)
+            {
+                result = "toddler";
+                Console.WriteLine($"you are a " + result);
+            }
 
-            //else if (age > 10 && age <= 12)
-            //{
-            //    result = "preteen";
-            //    Console.WriteLine($"you are a " + result);
-            //}
+            else if (age > 5 && age <= 10)
+            {
+                result = "child";
+                Console.WriteLine($"you are a " + result);
+            }
 
-            //else if (age > 12 && age <= 18)
-            //{
-            //    result = "teen";
-            //    Console.WriteLine($"you are a " + result);
-            //}
+            else if (age > 10 && age <= 12)
+            {
+                result = "preteen";
+                Console.WriteLine($"you are a " + result);
+            }
+
+            else if (age > 12 && age <= 18)
+            {
+                result = "teen";
+                Console.WriteLine($"you are a " + result);
+            }
 
 
-            //else if (age > 18)
-            //{
-            //    result = "adult";
-            //    Console.WriteLine($"you are a " + result);
-            //}
+            else if (age > 18)
+            {
+                result = "adult";
+                Console.WriteLine($"you are a " + result);
+            }
+
+            Console.WriteLine();
 
             //Hurricane
 
@@ -56,7 +63,7 @@ namespace part_5_console_decisions
             int category = Convert.ToInt32(Console.ReadLine());
 
 
-            switch(category)
+            switch (category)
             {
                 case 1:
                     Console.WriteLine("category 1 hurricanes have speeds between 78-95 M/H or 119-153KM/H");
@@ -65,7 +72,7 @@ namespace part_5_console_decisions
                 case 2:
                     Console.WriteLine("category 2 hurricanes have speeds between 96-110 M/H or 154-177 KM/H");
                     break;
-                
+
                 case 3:
                     Console.WriteLine("category 3 hurricanes have speeds between 111-130 M/H or 178-209 KM/H");
                     break;
@@ -84,16 +91,38 @@ namespace part_5_console_decisions
 
             }
 
+            Console.WriteLine();
 
+            //random divisble
 
+            Random generator = new Random();
 
+            int randomInt = generator.Next(2, 6);
 
+            Console.WriteLine($"enter a higher number than {randomInt}");
+            int userInput = Convert.ToInt32(Console.ReadLine());
 
+            int total = (userInput % randomInt);
 
+            if (randomInt > userInput)
+            {
+                Console.WriteLine($"i said higher than {randomInt} not lower");
+            }
 
+            else if (userInput <= 0)
+            {
+                Console.WriteLine("not a number");
+            }
 
+            else if (total == 0)
+            {
+                Console.WriteLine("thats divisible");
+            }
 
-
+            else if (total > 0)
+            {
+                Console.WriteLine("not divisible");
+            }
 
             Console.WriteLine("press anything to close this program");
             Console.ReadLine();
